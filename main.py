@@ -15,6 +15,7 @@ from schemas import AgentResponse
 
 tools = [TavilySearch()]
 llm = ChatOpenAI(model="gpt-4")
+# Uses function calling when available, falling back to parsing when not.
 structured_llm = llm.with_structured_output(AgentResponse)
 react_prompt = hub.pull("hwchase17/react")
 react_prompt_with_format_instructions = PromptTemplate(
