@@ -46,7 +46,7 @@ if __name__ == "__main__":
                 tool_name = tool_call.get("name")
                 tool_args = tool_call.get("args", {})
                 tool_call_id = tool_call.get("id")
-
+ 
                 tool_to_use = find_tool_by_name(tools, tool_name)
                 observation = tool_to_use.invoke(tool_args)
                 print(f"observation={observation}")
